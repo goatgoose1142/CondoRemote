@@ -1,0 +1,46 @@
+extends layout
+
+block content
+    nav.navbar.navbar-default(role="navigation")
+        div.container-fluid
+            div#navbar
+                ul.nav.nav-pills.nav-justified
+                    li.active: a(href="/remote/tv") TV
+                    li: a(href="/remote/xbox") XBox
+                    li: a(href="/remote/wii") Wii
+                    li: a(href="/remote/soundbar") Soundbar
+    div.container.text-center
+        div.text-center
+            button.btn.btn-default.btn-lg.remote-button(type="button", onclick="postData('tv', 'arrowUp', {})")
+                span.glyphicon.glyphicon-triangle-top
+            br
+            button.btn.btn-default.btn-lg.remote-button(type="button", onclick="postData('tv', 'arrowLeft', {})")
+                span.glyphicon.glyphicon-triangle-left
+            button.btn.btn-default.btn-lg.remote-button(type="button", onclick="postData('tv', 'enter', {})")
+                span.glyphicon.glyphicon-stop
+            button.btn.btn-default.btn-lg.remote-button(type="button", onclick="postData('tv', 'arrowRight', {})")
+                span.glyphicon.glyphicon-triangle-right
+            br
+            button.btn.btn-default.btn-lg.remote-button(type="button", onclick="postData('tv', 'arrowDown', {})")
+                span.glyphicon.glyphicon-triangle-bottom
+            br
+            br
+            button.btn.btn-default.btn-lg.remote-button(type="button", onclick="postData('tv', 'volumeDown', {})")
+                span.glyphicon.glyphicon-volume-down
+            button.btn.btn-default.btn-lg.remote-button(type="button", onclick="postData('tv', 'volumeUp', {})")
+                span.glyphicon.glyphicon-volume-up
+            button.btn.btn-default.btn-lg.remote-button(type="button", onclick="postData('tv', 'settings', {})")
+                span.glyphicon.glyphicon-cog
+            button.btn.btn-default.btn-lg.remote-button(type="button", onclick="postData('tv', 'power', {})")
+                span.glyphicon.glyphicon-off
+            hr
+            button.btn.btn-default.remote-button(type="button", onclick="postData('tv', 'volumeDown', {})") back
+            button.btn.btn-default.remote-button(type="button", onclick="postData('tv', 'settings', {})") menu
+            button.btn.btn-default.remote-button(type="button", onclick="postData('tv', 'power', {})") info
+            hr
+            p Channel
+            button.btn.btn-default.btn-lg.remote-button(type="button", onclick="postData('cable', 'channelUp', {})")
+                span.glyphicon.glyphicon-arrow-left
+            button.btn.btn-default.btn-lg.remote-button(type="button", onclick="postData('cable', 'channelDown', {})")
+                span.glyphicon.glyphicon-arrow-right
+            button.btn.btn-default.remote-button(type="button", onclick="postData('cable', 'prev', {})") prev

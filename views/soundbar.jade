@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    nav.navbar.navbar-default(role="navigation")
+        div.container-fluid
+            div#navbar
+                ul.nav.nav-pills.nav-justified
+                    li: a(href="/remote/tv") TV
+                    li: a(href="/remote/xbox") XBox
+                    li: a(href="/remote/wii") Wii
+                    li.active: a(href="/remote/soundbar") Soundbar
+    div.container.text-center
+        div.text-center

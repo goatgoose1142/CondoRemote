@@ -1,7 +1,26 @@
 doctype html
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+    head
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        title= title
+        link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/style.css')
+    body
+        script(src="/jquery-2.2.4.min.js")
+        script(src="/bootstrap/js/bootstrap.min.js")
+
+        script.
+            function postData(route, action, data) {
+                $.ajax({
+                    type: "POST",
+                    data: data,
+                    url: "/api/" + route + "/" + action,
+                    dataType: "JSON",
+                    crossDomain: true,
+                    success: function (response) {
+                        console.log(response.msg);
+                    }
+                });
+            }
+
+        block content
